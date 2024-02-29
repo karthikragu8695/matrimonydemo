@@ -51,22 +51,15 @@
                 <v-list-item
                   title="Update Profile"
                   prepend-icon="mdi-camera"
-                  @click="direct(item)"
+                  @click="profilepic(item)"
                   link>
-                </v-list-item>
-                <v-divider class="my-2"></v-divider>
-                <v-list-item min-height="24">
-                  <template v-slot:subtitle>
-                    <div class="text-caption">
-                      Shared with John + 1 more
-                    </div>
-                  </template>
                 </v-list-item>
           </v-list>
         </v-menu>
       </template>
         </v-data-table>
         </v-card>
+            
             <v-dialog v-model="dialog"  fullscreen :scrim="false" transition="slide-x-reverse-transition">
                 <v-list>
                     <v-form ref="form" @submit.prevent="Add">
@@ -270,7 +263,10 @@ async function direct(item){
   const username = item.id
   router.push(`/profiles/${username}`) 
 }
-
+async function profilepic(item){
+  const username = item.id
+  router.push(`/ProfilePicture/${username}`) 
+}
 function exportpdf(item){
   let docDefinition = {
   content: [

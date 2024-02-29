@@ -10,6 +10,10 @@ const routes = [
     component: HomeView
   },
   {
+    path: '/ProfilePicture/:id',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ProfilePic.vue')
+  },
+  {
     path: '/profiles/:id',
     component: () => import(/* webpackChunkName: "about" */ '../views/ProfileView.vue')
 

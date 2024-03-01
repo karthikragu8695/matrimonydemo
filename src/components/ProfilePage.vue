@@ -195,10 +195,13 @@
                             </v-card-text>
                             <v-row>
                               <v-col cols="6" >
-                                <v-file-input  v-model="photos" prepend-icon="mdi-camera"  variant="outlined" label="Photo Upload"></v-file-input>
+                                <v-file-input v-if="!update"  v-model="photos" prepend-icon="mdi-camera"  variant="outlined" label="Photo Upload"></v-file-input>
                               </v-col>
+                              <!-- <v-col cols="6">
+                                <v-file-input  v-model="photos" prepend-icon="mdi-camera"  variant="outlined" label="Photo Upload"></v-file-input>
+                              </v-col> -->
                               <v-col cols="6" >
-                                <v-file-input  v-model="Files" prepend-icon="mdi-file"  variant="outlined" label="Files Upload"></v-file-input>
+                                <v-file-input v-if="!update"  v-model="Files" prepend-icon="mdi-file"  variant="outlined" label="Files Upload"></v-file-input>
                               </v-col>
                             </v-row>
                             <v-card-actions  v-if="!update">
@@ -461,7 +464,7 @@ pdf.open();
           gender:gender.value,
           dob:dob.value
          })
-      .eq('id', id.value)
+      .eq('id',id.value)
       .select()
       console.log(data);
     }
@@ -509,20 +512,20 @@ pdf.open();
     FatherOccupation.value = data[0].FatherOccupation
     MotherOccupation.value = data[0].MotherOccupation
     FamilyGod.value = data[0].FamilyGod
+    dialog.value = true 
     Rashi.value = data[0].Rashi
     dob.value = data[0].dob
-    dialog.value = true 
     let d = new Date(dob.value)
-    const Month = d.getMonth()+1
-    const Day = d.getDay()
-    const Year = d.getFullYear()
-    const newDate = Day + "/" + Month + "/" + Year;
+    Month.value = d.getMonth()+1
+    Day.value = d.getDay()
+    Year.value = d.getFullYear()
+   // const newDate = Day + "/" + Month + "/" + Year;
     console.log(Year)
     console.log(Day)
     console.log(Month)
     console.log(d.toISOString())
-    console.log(newDate)
-    data[0].dob = newDate
+    // data[0].dob = newDate
+    // console.log(dob.value)
     }
   const firstNameRules = [
       value => {

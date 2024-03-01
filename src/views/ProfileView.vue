@@ -52,35 +52,35 @@
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
           <v-col lg="1" ><span  class="mdi mdi-account text-white bg-violet-500 rounded-xl p-1 "> </span></v-col>
-          <v-col cols="4" class="text-left font-weight-thin text-[15px]" >Age</v-col>
+          <v-col cols="4" class="text-left font-weight text-[15px]" >Age</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.age }}  Years and 10 months</v-col>
         </v-col>
       </v-row>
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
           <v-col lg="1" ><span  class="mdi mdi-weight-lifter text-white bg-violet-500 rounded-xl p-1 "> </span></v-col>
-          <v-col cols="4" class="text-left font-weight-thin text-[15px]" >Physique</v-col>
+          <v-col cols="4" class="text-left font-weight text-[15px]" >Physique</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.age }},{{ profile.height }}</v-col>
         </v-col>
       </v-row>
-      <v-row no-gutters>
+      <!-- <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
           <v-col lg="1" ><span  class="mdi mdi-translate-variant text-white bg-violet-500 rounded-xl p-1 "> </span></v-col>
-          <v-col cols="4" class="text-left font-weight-thin text-[15px]" >Spoken Languages</v-col>
+          <v-col cols="4" class="text-left font-weight text-[15px]" >Spoken Languages</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.Languages }}</v-col>
         </v-col>
-      </v-row>
+      </v-row> -->
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
           <v-col lg="1" ><span  class="mdi mdi-set-center text-white bg-violet-500 rounded-xl p-1 "> </span></v-col>
-          <v-col cols="4" class="text-left font-weight-thin text-[15px]" >Marital Status</v-col>
+          <v-col cols="4" class="text-left font-weight text-[15px]" >Marital Status</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.MaritalStatus }}</v-col>
         </v-col>
       </v-row>
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
           <v-col lg="1" ><span  class="mdi mdi-map-marker-radius-outline text-white bg-violet-500 rounded-xl p-1 "> </span></v-col>
-          <v-col cols="4" class="text-left font-weight-thin text-[15px]" >Lives In</v-col>
+          <v-col cols="4" class="text-left font-weight text-[15px]" >Lives In</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.lives }}  </v-col>
         </v-col>
       </v-row>
@@ -88,36 +88,36 @@
       <h2 class="font-bold text-xl mt-3">Her Religious Details</h2>
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
-          <v-col lg="1" ><span  class="mdi mdi-dharmachakra text-white bg-blue-500 rounded-xl p-1 "> </span></v-col>
-          <v-col cols="4" class="text-left font-weight-thin text-[15px]" >Religion</v-col>
+          <v-col lg="1" ><span  class="mdi mdi mdi-ubuntu text-white bg-blue-500 rounded-xl p-1 "> </span></v-col>
+          <v-col cols="4" class="text-left font-weight text-[15px]" >Religion</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.Religion }}  </v-col>
         </v-col>
       </v-row>
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
           <v-col lg="1" ><span  class="mdi mdi-book-account text-white bg-blue-500 rounded-xl p-1 "> </span></v-col>
-          <v-col cols="4" class="text-left font-weight-thin text-[15px]" >Caste</v-col>
+          <v-col cols="4" class="text-left font-weight text-[15px]" >Caste</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.caste }}  </v-col>
         </v-col>
       </v-row>
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
-          <v-col lg="1" ><span  class="mdi mdi-temple-hindu-outline text-white bg-blue-500 rounded-xl p-1 "> </span></v-col>
-          <v-col cols="4" class="text-left font-weight-thin text-[15px]" >Gothram</v-col>
+          <v-col lg="1" ><span  class="mdi mdi-asterisk-circle-outline text-white bg-blue-500 rounded-xl p-1 "> </span></v-col>
+          <v-col cols="4" class="text-left font-weight text-[15px]" >Gothram</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.Nadchathiram }}  </v-col>
         </v-col>
       </v-row>
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
           <v-col lg="1" ><span  class="mdi mdi-card-bulleted text-white bg-blue-500 rounded-xl p-1 "> </span></v-col>
-          <v-col cols="4" class="text-left font-weight-thin text-[15px]" >Dosham</v-col>
+          <v-col cols="4" class="text-left font-weight text-[15px]" >Dosham</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.Thosam }}  </v-col>
         </v-col>
       </v-row>
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
           <v-col lg="1" ><span  class="mdi mdi-umbraco  text-white bg-blue-500 rounded-xl p-1 "> </span></v-col>
-          <v-col cols="4" class="text-left font-weight-thin text-[15px]" >Raasi</v-col>
+          <v-col cols="4" class="text-left font-weight text-[15px]" >Raasi</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.Rashi }}  </v-col>
         </v-col>
       </v-row>
@@ -127,14 +127,14 @@
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
           <v-col lg="1" ><span  class="mdi mdi-account-school  text-white bg-red-500 rounded-xl p-1 "> </span></v-col>
-          <v-col cols="4" class="text-left font-weight-thin text-[15px]" >Education</v-col>
+          <v-col cols="4" class="text-left font-weight text-[15px]" >Education</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.Education }}  </v-col>
         </v-col>
       </v-row>
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
           <v-col lg="1" ><span  class="mdi mdi-account-credit-card-outline  text-white bg-red-500 rounded-xl p-1 "> </span></v-col>
-          <v-col cols="4" class="text-left font-weight-thin text-[15px]" >Employment</v-col>
+          <v-col cols="4" class="text-left font-weight text-[15px]" >Employment</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.Profession }}  </v-col>
         </v-col>
       </v-row>
@@ -144,28 +144,28 @@
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
           <v-col lg="1" ><span  class="mdi mdi-account-credit-card-outline  text-white bg-violet-500 rounded-xl p-1 "> </span></v-col>
-          <v-col cols="4" class="text-left font-weight-thin text-[15px]" >FatherName</v-col>
+          <v-col cols="4" class="text-left font-weight text-[15px]" >FatherName</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.FatherName }}  </v-col>
         </v-col>
       </v-row>
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
           <v-col lg="1" ><span  class="mdi mdi-account-supervisor  text-white bg-violet-500 rounded-xl p-1 "> </span></v-col>
-          <v-col cols="4" class="text-left font-weight-thin text-[15px]" >MotherName</v-col>
+          <v-col cols="4" class="text-left font-weight text-[15px]" >MotherName</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.MotherName }}  </v-col>
         </v-col>
       </v-row>
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
           <v-col lg="1" ><span  class="mdi mdi-account-tie  text-white bg-violet-500 rounded-xl p-1 "> </span></v-col>
-          <v-col cols="4" class="text-left font-weight-thin text-[15px]" >Brothers</v-col>
+          <v-col cols="4" class="text-left font-weight text-[15px]" >Brothers</v-col>
           <v-col cols="6" class="text-left font-bold ">ElderBrothers : {{ profile.ElderBrothers }} , YoungerBrother : {{ profile.YoungerBrother }}  </v-col>
         </v-col>
       </v-row>
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
           <v-col lg="1" ><span  class="mdi mdi-account-tie-woman  text-white bg-violet-500 rounded-xl p-1 "> </span></v-col>
-          <v-col cols="4" class="text-left font-weight-thin text-[15px]" >Sister</v-col>
+          <v-col cols="4" class="text-left font-weight text-[15px]" >Sister</v-col>
           <v-col cols="6" class="text-left font-bold ">ElderSister : {{ profile.ElderSister }}, Youngersister :{{ profile.YoungerSister }} </v-col>
         </v-col>
       </v-row>

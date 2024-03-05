@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProfilePage from '../components/ProfilePage.vue'
 
-
 const routes = [
   {
     path: '/home',
@@ -13,10 +12,14 @@ const routes = [
     path: '/ProfilePicture/:id',
     component: () => import(/* webpackChunkName: "about" */ '../views/ProfilePic.vue')
   },
+  
   {
     path: '/profiles/:id',
     component: () => import(/* webpackChunkName: "about" */ '../views/ProfileView.vue')
-
+  },
+  {
+    path: '/HoroScope/:id',
+    component: () => import(/* webpackChunkName: "about" */ '../views/HoroScope.vue')
   },
   // {
   //   path: '/Details',

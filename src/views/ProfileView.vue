@@ -8,7 +8,7 @@
             <div class="d-flex flex-wrap   justify-space-between ">
               <div class="w-full  items-center md:w-1/3 flex flex-col" >
                   <v-avatar class="  rounded-lg" size="250">
-                    <v-img cover v-model:src=profile.photos></v-img>
+                    <v-img cover v-model:src=profile.img></v-img>
                   </v-avatar>
                   <!-- <v-file-input  v-model="photos" @click="Add" prepend-icon="mdi-camera"  variant="outlined" label="Photo Upload"></v-file-input> -->
                   <!-- <v-file-input id="fileInput" @click="Add" type="file" style="display:none" v-on:change="yourVueMethod()"/>
@@ -102,7 +102,7 @@
       </v-row>
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
-          <v-col lg="1" ><span  class="mdi mdi-asterisk-circle-outline text-white bg-blue-500 rounded-xl p-1 "> </span></v-col>
+          <v-col lg="1" ><span  class="mdi mdi-apple-safari text-white bg-blue-500 rounded-xl p-1 "> </span></v-col>
           <v-col cols="4" class="text-left font-weight text-[15px]" >Gothram</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.Nadchathiram }}  </v-col>
         </v-col>
@@ -126,14 +126,14 @@
       <h2 class="font-bold text-xl mt-3">Her Professional  Details</h2>
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
-          <v-col lg="1" ><span  class="mdi mdi-account-school  text-white bg-red-500 rounded-xl p-1 "> </span></v-col>
+          <v-col lg="1" ><span  class="mdi mdi-book-education  text-white bg-red-500 rounded-xl p-1 "> </span></v-col>
           <v-col cols="4" class="text-left font-weight text-[15px]" >Education</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.Education }}  </v-col>
         </v-col>
       </v-row>
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
-          <v-col lg="1" ><span  class="mdi mdi-account-credit-card-outline  text-white bg-red-500 rounded-xl p-1 "> </span></v-col>
+          <v-col lg="1" ><span  class="mdi mdi-human-female-dance  text-white bg-red-500 rounded-xl p-1 "> </span></v-col>
           <v-col cols="4" class="text-left font-weight text-[15px]" >Employment</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.Profession }}  </v-col>
         </v-col>
@@ -143,7 +143,7 @@
       <h2 class="font-bold text-xl mt-3">About Her Family</h2>
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
-          <v-col lg="1" ><span  class="mdi mdi-account-credit-card-outline  text-white bg-violet-500 rounded-xl p-1 "> </span></v-col>
+          <v-col lg="1" ><span  class="mdi mdi-account-supervisor   text-white bg-violet-500 rounded-xl p-1 "> </span></v-col>
           <v-col cols="4" class="text-left font-weight text-[15px]" >FatherName</v-col>
           <v-col cols="6" class="text-left font-bold ">{{ profile.FatherName }}  </v-col>
         </v-col>
@@ -164,7 +164,7 @@
       </v-row>
       <v-row no-gutters>
         <v-col lg="8" md="8" sm="12" class="flex">
-          <v-col lg="1" ><span  class="mdi mdi-account-tie-woman  text-white bg-violet-500 rounded-xl p-1 "> </span></v-col>
+          <v-col lg="1" ><span  class="mdi mdi-account-tie  text-white bg-violet-500 rounded-xl p-1 "> </span></v-col>
           <v-col cols="4" class="text-left font-weight text-[15px]" >Sister</v-col>
           <v-col cols="6" class="text-left font-bold ">ElderSister : {{ profile.ElderSister }}, Youngersister :{{ profile.YoungerSister }} </v-col>
         </v-col>
@@ -190,7 +190,7 @@ let { data: profiles, error } = await supabase
 .select('*')
 .eq('id', id)
 profile.value = profiles[0]
+profile.value.img = `https://myizzcmzjfnzaldgrqgw.supabase.co/storage/v1/object/public/images/photos/${id}_profilephoto`
 console.log(error)
 })
-
 </script>

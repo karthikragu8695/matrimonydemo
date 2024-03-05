@@ -44,14 +44,20 @@
                   location="bottom end"
                   transition="fade-transition">
                 <v-list
-                  density="compact"
-                  slim
-                  rounded="lg"
                   min-width="250">
                 <v-list-item
                   title="Update Profile"
                   prepend-icon="mdi-camera"
                   @click="profilepic(item)"
+                  link>
+                </v-list-item>
+          </v-list>
+                <v-list
+                  min-width="250">
+                <v-list-item
+                  title="horoscope"
+                  prepend-icon="mdi-camera"
+                  @click="horoscope(item)"
                   link>
                 </v-list-item>
           </v-list>
@@ -194,15 +200,15 @@
                             <v-text-field label="Mobile Number" v-model="mobile" :rules="MobileRules" required  variant="outlined"></v-text-field>
                             </v-card-text>
                             <v-row>
-                              <v-col cols="6" >
+                              <!-- <v-col cols="6" >
                                 <v-file-input v-if="!update"  v-model="photos" prepend-icon="mdi-camera"  variant="outlined" label="Photo Upload"></v-file-input>
-                              </v-col>
+                              </v-col> -->
                               <!-- <v-col cols="6">
                                 <v-file-input  v-model="photos" prepend-icon="mdi-camera"  variant="outlined" label="Photo Upload"></v-file-input>
                               </v-col> -->
-                              <v-col cols="6" >
+                              <!-- <v-col cols="6" >
                                 <v-file-input v-if="!update"  v-model="Files" prepend-icon="mdi-file"  variant="outlined" label="Files Upload"></v-file-input>
-                              </v-col>
+                              </v-col> -->
                             </v-row>
                             <v-card-actions  v-if="!update">
                                 <v-btn type="submit" :loading="loading" block variant="outlined" color="green">Add profile</v-btn>
@@ -269,6 +275,10 @@ async function direct(item){
 async function profilepic(item){
   const username = item.id
   router.push(`/ProfilePicture/${username}`) 
+}
+async function horoscope(item){
+  const username = item.id
+  router.push(`/HoroScope/${username}`) 
 }
 function exportpdf(item){
   let docDefinition = {
@@ -396,7 +406,6 @@ function exportpdf(item){
     }
   }
 };
-console.log(item)
 const pdf = pdfMake.createPdf(docDefinition)
 pdf.open();
 }
@@ -664,15 +673,14 @@ pdf.open();
       //   name: email.value,
       //   password: password.value
       //  })
-    
+      // photos:"https://myizzcmzjfnzaldgrqgw.supabase.co/storage/v1/object/public/images/photos/"+photos.value[0].name,
+      // Files:"https://myizzcmzjfnzaldgrqgw.supabase.co/storage/v1/object/public/Files/Files/"+Files.value[0].name,
         let profile = {  
               name: name.value, 
               age: age.value, 
               height: height.value, 
               lives: lives.value, 
-              photos:"https://myizzcmzjfnzaldgrqgw.supabase.co/storage/v1/object/public/images/photos/"+photos.value[0].name,
               mobile: +mobile.value,
-              Files:"https://myizzcmzjfnzaldgrqgw.supabase.co/storage/v1/object/public/images/Files/"+Files.value[0].name,
               gender : gender.value,
               MaritalStatus : MaritalStatus.value,
               caste :caste.value,

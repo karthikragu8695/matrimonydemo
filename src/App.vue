@@ -24,13 +24,11 @@ export default {
       if (event == 'SIGNED_IN' ) {
           supabase.auth.getUser()
           .then((dat) => {
-            console.log(dat);
             supabase
             .from('admin')
             .select("*")
             .eq('uuid', dat.data.user.id)
             .then((d) => {
-              console.log(d);
               if(d.data.length > 0) {
                 this.login = true
               } else {

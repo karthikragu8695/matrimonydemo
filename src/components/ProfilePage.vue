@@ -216,6 +216,7 @@
                             <v-card-actions v-else>
                               <v-btn @click="updateItems()" :loading="loading" block variant="outlined" color="blue">update</v-btn>
                             </v-card-actions>
+                            
                         </v-card>
                     </v-col>
                  </v-row>
@@ -259,7 +260,7 @@
   const FamilyGod = ref(null)
   const gender = ref(null)
   const photos = ref(null)
-  const Files = ref(null)
+  // const Files = ref(null)
   const dob =ref(null)
   const Day = ref(null)
   const Month = ref(null)
@@ -280,7 +281,7 @@ async function horoscope(item){
   const username = item.id
   router.push(`/HoroScope/${username}`) 
 }
-function exportpdf(item){
+async function exportpdf(item){
   let docDefinition = {
   content: [
     {
@@ -296,18 +297,17 @@ function exportpdf(item){
           [
                {
                 image: 'photo',
-               // height:150,
-                width:300,
+                width: 200,
                 alignment:'center'
               },
           ],
+         
           [{text:'Basic Details',color: '#964B00',style:'subheader'}],
           [{
             layout: 'noBorders',
             table:{
             heights: 20,
-			width: 150,
-
+            width: 150,
             image: 'photo',
             widths:['*','*'],
             body:[
@@ -387,9 +387,10 @@ function exportpdf(item){
         ],
       }
     }
+    
   ],
   images:{
-    photo:item.photos
+    photo: `https://myizzcmzjfnzaldgrqgw.supabase.co/storage/v1/object/public/images/photos/${item.id}_profilephoto`
   },
   styles:{
     header:{
@@ -406,6 +407,13 @@ function exportpdf(item){
     }
   }
 };
+console.log('id', item.id);
+let res = await fetch(`https://myizzcmzjfnzaldgrqgw.supabase.co/storage/v1/object/public/images/photos/${item.id}_profilephoto`)
+if(res.status != 200) {
+  console.log( docDefinition);
+  docDefinition.content[0].table.body.splice(1,1)
+  docDefinition.images.photo = `https://myizzcmzjfnzaldgrqgw.supabase.co/storage/v1/object/public/images/photos/196_profilephoto`
+}
 const pdf = pdfMake.createPdf(docDefinition)
 pdf.open();
 }
@@ -702,12 +710,12 @@ pdf.open();
               type:'admin',
               dob: Date.parse(`${Day.value} ${Month.value} ${Year.value} 00:00:00 GMT`)
         }
-        const {data,error}= await supabase.storage.from('images').upload(`photos/${photos.value[0].name}`,photos.value[0])  
-        await supabase.storage
-        .from('Files')
-        .upload(`Files/${Files.value[0].name}`,Files.value[0])
-        console.log(error)
-        console.log(data);
+        // const {data,error}= await supabase.storage.from('images').upload(`photos/${photos.value[0].name}`,photos.value[0])  
+        // await supabase.storage
+        // .from('Files')
+        // .upload(`Files/${Files.value[0].name}`,Files.value[0])
+        // console.log(error)
+        // console.log(data);
         await supabase
           .from('profiles')
           .insert([profile])

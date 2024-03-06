@@ -7,8 +7,8 @@
           <v-card color="white" class="mt-5 px-2 shadow-xl py-8" theme="dark">
             <div class="d-flex flex-wrap   justify-space-between ">
               <div class="w-full  items-center md:w-1/3 flex flex-col" >
-                  <v-avatar class="  rounded-lg" size="250">
-                    <v-img cover v-model:src=profile.img></v-img>
+                  <v-avatar class="rounded-lg" size="250">
+                    <v-img  cover v-model:src=profile.img></v-img>
                   </v-avatar>
                   <!-- <v-file-input  v-model="photos" @click="Add" prepend-icon="mdi-camera"  variant="outlined" label="Photo Upload"></v-file-input> -->
                   <!-- <v-file-input id="fileInput" @click="Add" type="file" style="display:none" v-on:change="yourVueMethod()"/>
@@ -170,7 +170,6 @@
         </v-col>
       </v-row>
     </v-card>
-
     </div>
   </div>
 </template>
@@ -190,7 +189,14 @@ let { data: profiles, error } = await supabase
 .select('*')
 .eq('id', id)
 profile.value = profiles[0]
-profile.value.img = `https://myizzcmzjfnzaldgrqgw.supabase.co/storage/v1/object/public/images/photos/${id}_profilephoto`
+fetch(`https://myizzcmzjfnzaldgrqgw.supabase.co/storage/v1/object/public/images/photos/${id}_profilephoto`).then(res => 
+{
+  if(res.status == 200){
+   profile.value.img = `https://myizzcmzjfnzaldgrqgw.supabase.co/storage/v1/object/public/images/photos/${id}_profilephoto`
+  }else{
+   profile.value.img = `https://myizzcmzjfnzaldgrqgw.supabase.co/storage/v1/object/public/images/photos/${196}_profilephoto`
+  }
+})
 console.log(error)
 })
 </script>

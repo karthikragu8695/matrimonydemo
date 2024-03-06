@@ -15,13 +15,13 @@
               <input type="file" id="file"  style="display: none" name="image" accept="image/gif,image/jpeg,image/jpg,image/png" multiple="" data-original-title="upload photos">
             </label> -->
             <!-- <span class="mdi mdi-face-man-profile" type="file"></span> -->
-            <div class="flex items-center">
-              <div max-width="none" class="mx-auto" >
-              <v-file-input  v-model="photos" prepend-icon="mdi-camera"  variant="outlined"></v-file-input>
-              <v-btn @click="update">Update</v-btn>
-              <v-btn @click="set" class="ml-5">Ok</v-btn>
+              <div  class="mx-auto flex px-20" >
+                <v-col cols="12" class="items-center flex mx-auto">
+                  <v-file-input  v-model="photos" prepend-icon="mdi-camera"  variant="outlined"></v-file-input>
+                  <v-btn @click="update">Update</v-btn>
+                </v-col>
+              
               </div>
-            </div>
         </v-col>
       </v-row>
     </div>

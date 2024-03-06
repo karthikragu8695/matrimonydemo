@@ -3,7 +3,9 @@
         <label for="menu-toggle"  class="cursor-pointer md:hidden ">
           <v-app-bar-nav-icon  @click="draw=!draw"></v-app-bar-nav-icon>
         </label>
-          <v-app-bar-title> <v-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSyvLdlSnwfyHe7Xoz4rNZcHdYJKlKnxUUkxMM7J92wSC8PCoT8IuiVgf3Qp5ykBFrBUg&usqp=CAU" class="w-20"></v-img> </v-app-bar-title>
+          <v-app-bar-title> 
+            <!-- <v-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSyvLdlSnwfyHe7Xoz4rNZcHdYJKlKnxUUkxMM7J92wSC8PCoT8IuiVgf3Qp5ykBFrBUg&usqp=CAU" class="w-20"></v-img> -->
+          </v-app-bar-title>
             <div class="text-4xl lg:mr-32  hidden lg:block">
               <!-- <v-btn value="recent" to="/" class="px-5   ">
                   <v-icon >mdi-home</v-icon>
